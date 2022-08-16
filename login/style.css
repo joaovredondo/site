@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(91, 222, 255);
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 22pt;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card_login{
+    background-color: rgb(255, 229, 85);
+    width: 30vw;
+    height: 60vh;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.label_email{
+    text-align: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 16pt;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.label_email > input{
+    margin-top: 5px;
+    padding: 6px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 12pt;
+}
+
+.label_password{
+    text-align: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 16pt;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.label_password > input{
+    margin-top: 5px;
+    padding: 6px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 12pt;
+}
+
+.label_cadastro{
+    margin-top: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16pt;
+}
+
+.input_btn{
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.input_btn > input:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    transition: .3s ease-in-out;
+}
+
+.input_btn > input{
+    padding: 6px;
+    font-size: 16pt;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
