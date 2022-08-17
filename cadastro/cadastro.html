@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="card_cadastro">
+            <h1>Crie sua conta</h1>
+            
+            <div class="label_geral">
+                <label for="">Nome Completo</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" autofocus>
+            </div>
+        
+            <div class="label_geral">
+                <label for="">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="label_geral">
+                <label for="">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha">
+            </div>
+
+            <div class="label_geral">
+                <label for="">Confirmar Senha</label>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="input_btn">
+                <input type="button" value="CADASTRAR">
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
