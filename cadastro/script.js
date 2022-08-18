@@ -4,28 +4,38 @@ let label_nome = document.querySelector('#label_nome')
 let email = document.querySelector('#email')
 let label_email = document.querySelector('#label_email')
 
-let char = '[a-zA-Z]'
-let num = '[0-9]'
-let esp = '[@]'
+let error = document.querySelector('#msgError')
+let sucess = document.querySelector('#msgSucess')
 
-function verificar(){
+let num_reg = '[0-9]'
+let esp_reg = '[!@#$%¨&*()_+-]'
+
+function verificar() {
     let cnome = String(nome.value)
-    if(cnome.match(num)){
-        label_nome.innerHTML = 'Nome - Campo não pode conter números'
+    if (nome.value == 0) {
+        error.innerHTML = 'Campo <strong>NOME</strong> não pode ser vazio.'
+        error.setAttribute('style', 'padding: 10px')
         label_nome.setAttribute('style', 'color: red')
-    } else if(nome.value == 0){
-        label_nome.innerHTML = 'Nome - Campo não pode ser vazio'
+        nome.setAttribute('style', 'border-color: red')
+    } else if (nome.value.length < 6) {
+        error.innerHTML = 'Campo <strong>NOME</strong> - Mínimo 6 caracteres.'
+        error.setAttribute('style', 'padding: 10px')
         label_nome.setAttribute('style', 'color: red')
+        nome.setAttribute('style', 'border-color: red')
+    } else if (cnome.match(num_reg)) {
+        error.innerHTML = 'Campo <strong>NOME</strong> não permite numerais.'
+        error.setAttribute('style', 'padding: 10px')
+        label_nome.setAttribute('style', 'color: red')
+        nome.setAttribute('style', 'border-color: red')
+    } else if (cnome.match(esp_reg)) {
+        error.innerHTML = 'Campo <strong>NOME</strong> não permite caracteres especiais.'
+        error.setAttribute('style', 'padding: 10px')
+        label_nome.setAttribute('style', 'color: red')
+        nome.setAttribute('style', 'border-color: red')
     } else {
-        label_nome.innerHTML = 'Nome - OK'
+        error.innerHTML = ''
+        error.setAttribute('style', 'padding: 0px')
         label_nome.setAttribute('style', 'color: green')
         nome.setAttribute('style', 'border-color: green')
-    }
-
-    let cemail = String(email.value)
-    if(cemail.match(esp)){
-        label_email.innerHTML = 'Email - OK'
-    }  else {
-        label_email.innerHTML = 'Email - Preencha corretamente os campos'
     }
 }
