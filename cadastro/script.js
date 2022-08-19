@@ -10,8 +10,50 @@ let label_password = document.querySelector('#label_password')
 let cpassword = document.querySelector('#cpassword')
 let label_cpassword = document.querySelector('#label_cpassword')
 
+let view_pass = document.querySelector('#view_pass')
+let view_cpass = document.querySelector('#view_cpass')
+
 let error = document.querySelector('#msgError')
 let sucess = document.querySelector('#msgSucess')
+
+view_pass.addEventListener('click', viewPass)
+view_cpass.addEventListener('click', viewConfirmPass)
+
+function viewPass(){
+    let type_pass = password.type == 'password'
+
+    if(type_pass){
+        showPassword()
+    } else {
+        hidePassword()
+    }
+}
+
+function viewConfirmPass(){
+    let type_cpass = cpassword.type == 'password'
+
+    if(type_cpass){
+        showConfirmPass()
+    } else {
+        hideConfirmPass()
+    }
+}
+
+function showConfirmPass(){
+    cpassword.setAttribute('type', 'text')
+}
+
+function hideConfirmPass(){
+    cpassword.setAttribute('type','password')
+}
+
+function showPassword(){
+    password.setAttribute('type', 'text')
+}
+
+function hidePassword(){
+    password.setAttribute('type', 'password')
+}
 
 let num_reg = '[0-9]'
 let esp_reg = '[!@#$%¨&*()_+-]'
