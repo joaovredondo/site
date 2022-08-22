@@ -21,24 +21,24 @@
 
                 <div class="label_geral">
                     <label for="nome" id="label_nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" autofocus>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" autofocus required>
                 </div>
 
                 <div class="label_geral">
                     <label for="email" id="label_email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                    <input type="text" name="email" id="email" placeholder="Digite seu e-mail">
                 </div>
 
                 <div class="label_geral">
                     <i class="fa-solid fa-eye" id="view_pass"></i>
                     <label for="password" id="label_password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                 </div>
 
                 <div class="label_geral">
                     <i class="fa-solid fa-eye" id="view_cpass"></i>
                     <label for="cpassword" id="label_cpassword">Confirmar senha</label>
-                    <input type="password" name="cpassword" id="cpassword" placeholder="Confirme sua senha">
+                    <input type="password" name="cpassword" id="cpassword" placeholder="Confirme sua senha" required>
                 </div>
 
                 <div class="input_btn">
