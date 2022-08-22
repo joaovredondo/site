@@ -34,9 +34,9 @@ verify_btn.addEventListener('click', verificar)
 // FUNÇÕES
 
 function viewPass() {
-    let type_pass = password.type == 'password'
+    let confirmPass = password.type == 'password'
 
-    if (type_pass) {
+    if (confirmPass) {
         showPassword()
     } else {
         hidePassword()
@@ -44,20 +44,20 @@ function viewPass() {
 }
 
 function viewConfirmPass() {
-    let type_cpass = password.type == 'password'
+    let confirmcPass = cpassword.type == 'password'
 
-    if(type_cpass){
-        showConfirmPass()
+    if(confirmcPass) {
+        showConfPassword()
     } else {
-        hideConfirmPass()
+        hideConfPassword()
     }
 }
 
-function showConfirmPass() {
+function showConfPassword() {
     cpassword.setAttribute('type', 'text')
 }
 
-function hideConfirmPass() {
+function hideConfPassword() {
     cpassword.setAttribute('type', 'password')
 }
 
