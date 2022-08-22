@@ -31,8 +31,10 @@ view_pass.addEventListener('click', viewPass)
 view_cpass.addEventListener('click', viewConfirmPass)
 verify_btn.addEventListener('click', verificar)
 
-// FUNÇÕES
+// INICIO DAS FUNÇÕES
 
+
+// FUNÇÃO VERIFICA O RETORNO E APLICA A CONVERSÃO
 function viewPass() {
     let confirmPass = password.type == 'password'
 
@@ -53,6 +55,8 @@ function viewConfirmPass() {
     }
 }
 
+
+// FUNCÃO PARA CONVERTER TIPO DO CAMPO AO CLICAR NO ÍCONE PARA VISUALIZAR SENHA
 function showConfPassword() {
     cpassword.setAttribute('type', 'text')
 }
@@ -69,6 +73,7 @@ function hidePassword() {
     password.setAttribute('type', 'password')
 }
 
+// FUNÇÃO VERIFICA SE TODOS OS CAMPOS ESTÃO OK E ALTERA O TIPO DO BOTÃO PARA SUBMIT
 function verificar() {
     if (verificaCampos() && verificaNome() && verificaEmail() && verificaPassword() && verificaConfirmPassword()) {
         verify_btn.setAttribute('type', 'submit')
@@ -78,6 +83,7 @@ function verificar() {
 
 }
 
+// FUNÇÃO VERIFICA CAMPOS GERAIS
 function verificaCampos(){
     if(nome.value == 0 || email.value == 0 || password.value == 0 || cpassword.value == 0){
         error.innerHTML = 'Preencha os campos.'
@@ -96,6 +102,8 @@ function verificaCampos(){
     }
 }
 
+
+// FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO NOME
 function verificaNome(){
     regNome = String(nome.value)
 
@@ -116,6 +124,7 @@ function verificaNome(){
         }
     }
 
+// FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO E-MAIL
 function verificaEmail(){
     regEmail = String(email.value)
 
@@ -141,6 +150,7 @@ function verificaEmail(){
 
 }
 
+//FUNÇÃO QUE APLICA ALGUMAS VERIFICAÇÕES NO CAMPO SENHA
 function verificaPassword(){
     regPass = String(password.value)
 
@@ -165,6 +175,7 @@ function verificaPassword(){
     }
 }
 
+// FUNÇÃO QUE VERIFICA IDENTIDADE DA SENHA E CONFIRMAÇÃO DA MESMA
 function verificaConfirmPassword(){
     if (cpassword.value != password.value) {
         error.innerHTML = 'As senhas não coincidem. Verifique'
