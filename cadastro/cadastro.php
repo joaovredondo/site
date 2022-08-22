@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,6 +18,15 @@
         <div class="container">
             <div class="card_cadastro">
                 <h1>Crie sua conta</h1>
+
+                <div class="msgSucess">
+                    <?php
+                    if(isset($_SESSION['msgConfirm'])){
+                        echo $_SESSION['msgConfirm'];
+                        unset($_SESSION['msgConfirm']);
+                    }
+                ?>
+                </div>
 
                 <div id="msgError"></div>
                 <div id="msgSucess"></div>
