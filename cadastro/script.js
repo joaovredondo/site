@@ -16,7 +16,7 @@ let view_pass = document.querySelector('#view_pass')
 let view_cpass = document.querySelector('#view_cpass')
 
 let error = document.querySelector('#msgError')
-let sucess = document.querySelector('#msgSucess')
+let sucess = document.querySelector('.msgSucess')
 
 let verify_btn = document.querySelector('#btn_enviar')
 
@@ -48,7 +48,7 @@ function viewPass() {
 function viewConfirmPass() {
     let confirmcPass = cpassword.type == 'password'
 
-    if(confirmcPass) {
+    if (confirmcPass) {
         showConfPassword()
     } else {
         hideConfPassword()
@@ -77,6 +77,8 @@ function hidePassword() {
 function verificar() {
     if (verificaCampos() && verificaNome() && verificaEmail() && verificaPassword() && verificaConfirmPassword()) {
         verify_btn.setAttribute('type', 'submit')
+        sucess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+        sucess.setAttribute('style', 'padding: 6px')
     } else {
 
     }
@@ -84,9 +86,9 @@ function verificar() {
 }
 
 // FUNÇÃO VERIFICA CAMPOS GERAIS
-function verificaCampos(){
-    if(nome.value == 0 || email.value == 0 || password.value == 0 || cpassword.value == 0){
-        error.innerHTML = 'Preencha os campos.'
+function verificaCampos() {
+    if (nome.value == 0 || email.value == 0 || password.value == 0 || cpassword.value == 0) {
+        error.innerHTML = '<strong>Preencha os campos para se cadastrar</strong>'
         error.setAttribute('style', 'padding: 6px')
         label_nome.setAttribute('style', 'color: red')
         label_email.setAttribute('style', 'color: red')
@@ -98,38 +100,43 @@ function verificaCampos(){
         cpassword.setAttribute('style', 'border-color: red')
         return false
     } else {
+        error.innerHTML = ''
+        error.setAttribute('style', 'padding: 0px')
         return true
     }
 }
 
 
 // FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO NOME
-function verificaNome(){
+function verificaNome() {
     regNome = String(nome.value)
 
-        if (nome.value.length < 8) {
-            error.innerHTML = 'Nome - Mínimo 8 caracteres'
-            label_nome.setAttribute('style', 'color: red')
-            nome.setAttribute('style', 'border-color: red')
-            return false
-        } else if (regNome.match(num_reg) || regNome.match(esp_reg)) {
-            error.innerHTML = 'Nome - Não pode conter caracteres númericos ou especiais'
-            label_nome.setAttribute('style', 'color: red')
-            nome.setAttribute('style', 'border-color: red')
-            return false
-        } else {
-            label_nome.setAttribute('style', 'color: green')
-            nome.setAttribute('style', 'border-color: green')
-            return true
-        }
+    if (nome.value.length < 8) {
+        error.setAttribute('style', 'padding: 6px')
+        error.innerHTML = '<strong>Nome - Mínimo 8 caracteres</strong>'
+        label_nome.setAttribute('style', 'color: red')
+        nome.setAttribute('style', 'border-color: red')
+        return false
+    } else if (regNome.match(num_reg) || regNome.match(esp_reg)) {
+        error.innerHTML = '<strong>Nome - Não pode conter caracteres númericos ou especiais</strong>'
+        error.setAttribute('style', 'padding: 6px')
+        label_nome.setAttribute('style', 'color: red')
+        nome.setAttribute('style', 'border-color: red')
+        return false
+    } else {
+        label_nome.setAttribute('style', 'color: green')
+        nome.setAttribute('style', 'border-color: green')
+        return true
     }
+}
 
 // FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO E-MAIL
-function verificaEmail(){
+function verificaEmail() {
     regEmail = String(email.value)
 
     if (email.value.length <= 13) {
-        error.innerHTML = 'Email - Preencha corretamente o campo'
+        error.setAttribute('style', 'padding: 6px')
+        error.innerHTML = '<strong>Email - Preencha corretamente o campo</strong>'
         label_email.setAttribute('style', 'color: red')
         email.setAttribute('style', 'border-color: red')
         return false
@@ -139,7 +146,8 @@ function verificaEmail(){
             email.setAttribute('style', 'border-color: green')
             return true
         } else {
-            error.innerHTML = 'Email - @ Não informado. Preencha corretamente'
+            error.innerHTML = '<strong>Email - @ Não informado. Preencha corretamente</strong>'
+            error.setAttribute('style', 'padding: 6px')
             label_email.setAttribute('style', 'color: red')
             email.setAttribute('style', 'border-color: red')
             return false
@@ -151,23 +159,25 @@ function verificaEmail(){
 }
 
 //FUNÇÃO QUE APLICA ALGUMAS VERIFICAÇÕES NO CAMPO SENHA
-function verificaPassword(){
+function verificaPassword() {
     regPass = String(password.value)
 
     if (password.value.length <= 7) {
-        error.innerHTML = 'Senha - Mínimo 8 caracteres'
+        error.innerHTML = '<strong>Senha - Mínimo 8 caracteres</strong>'
+        error.setAttribute('style', 'padding: 6px')
         label_password.setAttribute('style', 'color: red')
         password.setAttribute('style', 'border-color: red')
         return false
     } else if (password) {
-        if (regPass.match(num_reg) && regPass.match(char_reg) && regPass.match(charmax_reg)) {
+        if (regPass.match(num_reg) && regPass.match(char_reg) && regPass.match(charmax_reg) && regPass.match(esp_reg)) {
             label_password.setAttribute('style', 'color: green')
-            password.setAttribute('style', 'border-color: green')   
+            password.setAttribute('style', 'border-color: green')
             return true
         } else {
             label_password.setAttribute('style', 'color: red')
-        password.setAttribute('style', 'border-color: red')
-            error.innerHTML = 'Senha - Necessário: 1 número, 1 letra maiúscula e minúscula'
+            password.setAttribute('style', 'border-color: red')
+            error.setAttribute('style', 'padding: 6px; font-size: 14.5pt')
+            error.innerHTML = '<strong>Senha - 1 caractere especial, 1 minúscula, 1 maiúscula e 1 número</strong>'
             return false
         }
     } else {
@@ -176,13 +186,16 @@ function verificaPassword(){
 }
 
 // FUNÇÃO QUE VERIFICA IDENTIDADE DA SENHA E CONFIRMAÇÃO DA MESMA
-function verificaConfirmPassword(){
+function verificaConfirmPassword() {
     if (cpassword.value != password.value) {
-        error.innerHTML = 'As senhas não coincidem. Verifique'
+        error.setAttribute('style', 'padding: 6px')
+        error.innerHTML = '<strong>As senhas não coincidem. Verifique</strong>'
         label_cpassword.setAttribute('style', 'color: red')
         cpassword.setAttribute('style', 'border-color: red')
         return false
     } else {
+        label_cpassword.setAttribute('style', 'color: green')
+        cpassword.setAttribute('style', 'border-color: green')
         return true
     }
 }

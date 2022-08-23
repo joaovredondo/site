@@ -12,10 +12,11 @@ $insert_users = "INSERT INTO z_usuarios (nome, email, senha, created) VALUES ('$
 $resultado_insert = mysqli_query($conexao, $insert_users);
 
 if(mysqli_insert_id($conexao)){
-    $_SESSION['msgConfirm'] = 'Usuário cadastro com sucesso.';
+    $_SESSION['msgConfirm'] = '<p style="padding: 6px; font-size: 16pt"><strong>Usuário cadastro com sucesso.</strong>';
+    sleep(3);
     header("Location: cadastro.php");
 } else {
-    $_SESSION['errorConfirm'];
+    $_SESSION['errorConfirm'] = '[ERROR] - Usuário não cadastrado.';
     header("Location: cadastro.php");
 }
 ?>

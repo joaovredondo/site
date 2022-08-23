@@ -7,6 +7,23 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    font-size: 16pt;
+    color: black;
+    background-color: rgb(216, 65, 65);
+    padding: 8px;
+    border-radius: 4px;
+    width: 90%;
+    text-align: center;
+}
+
+a:hover{
+    background-color: rgb(216, 22, 22);
+    transition: .4s ease-in-out;
+    color: wheat;
+}
+
 h1{
     text-align: center;
     margin-top: 16px;
@@ -29,7 +46,7 @@ h1{
 #msgError{
     background-color: rgb(255, 137, 137);
     position: fixed;
-    font-size: 14pt;
+    font-size: 15.5pt;
     margin-top: -60px;
     text-align: center;
     border-radius: 4px;
@@ -63,7 +80,7 @@ h1{
 
 .card_cadastro{
     background-color: white;
-    width: 30vw;
+    width: 27vw;
     height: 85vh;
     border-radius: 4px;
 }
@@ -91,7 +108,7 @@ h1{
 }
 
 .input_btn{
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,9 +116,9 @@ h1{
 
 .input_btn > input{
     cursor: pointer;
-    width: 25%;
+    width: 94%;
     font-size: 16pt;
-    padding: 6px;
+    padding: 8px;
     border: none;
     outline: none;
     background-color: rgb(216, 65, 65);
@@ -111,8 +128,12 @@ h1{
 .input_btn > input:hover{
     background-color: rgb(216, 22, 22);
     transition: .4s ease-in-out;
-    font-size: 18pt;
-    width: 30%;
-    padding: 8px;
     color: wheat;
+}
+
+.input_btnvoltar{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
