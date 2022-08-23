@@ -22,8 +22,9 @@
             </div>
 
             <div class="label_password">
+                <i class="fa-solid fa-eye" id="view_pass"></i>
                 <label for="password">Senha</label>
-                <input type="password" name="password" id="passoword" placeholder="Digite sua senha" required>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                 <i class="fa-solid fa-lock"></i>
             </div>
 
@@ -34,11 +35,12 @@
             <hr>
 
             <div class="label_cadastro">
-                Não possuiu conta? <a href="../cadastro/cadastro.php">Cadastrar-se</a>
+                Não possui uma conta? <a href="../cadastro/cadastro.php">Cadastrar-se</a>
             </div>
 
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

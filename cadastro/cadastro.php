@@ -54,11 +54,11 @@ session_start();
                 </div>
 
                 <div class="input_btn">
-                    <input type="button" id="btn_enviar" value="Cadastrar-se" onclick="verificar()">
+                    <input type="button" id="btn_enviar" value="Cadastre-se" onclick="verificar()">
                 </div>
 
                 <div class="input_btnvoltar">
-                    <a href="../login/login.html">Retornar ao Login</a>
+                    <a href="../login/login.php">Retornar ao Login</a>
                 </div>
 
             </div>
