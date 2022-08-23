@@ -78,7 +78,7 @@ function verificar() {
     if (verificaCampos() && verificaNome() && verificaEmail() && verificaPassword() && verificaConfirmPassword()) {
         verify_btn.setAttribute('type', 'submit')
         sucess.innerHTML = '<strong>Cadastrando usuário...</strong>'
-        sucess.setAttribute('style', 'padding: 6px')
+        sucess.setAttribute('style', 'padding: 6px; font-size: 16pt; cursor: pointer')
     } else {
 
     }
@@ -88,7 +88,7 @@ function verificar() {
 // FUNÇÃO VERIFICA CAMPOS GERAIS
 function verificaCampos() {
     if (nome.value == 0 || email.value == 0 || password.value == 0 || cpassword.value == 0) {
-        error.innerHTML = '<strong>Preencha os campos para se cadastrar</strong>'
+        error.innerHTML = '<strong>Preencha todos os campos para se cadastrar</strong>'
         error.setAttribute('style', 'padding: 6px')
         label_nome.setAttribute('style', 'color: red')
         label_email.setAttribute('style', 'color: red')
@@ -166,7 +166,9 @@ function verificaPassword() {
         error.innerHTML = '<strong>Senha - Mínimo 8 caracteres</strong>'
         error.setAttribute('style', 'padding: 6px')
         label_password.setAttribute('style', 'color: red')
+        label_cpassword.setAttribute('style', 'color: red')
         password.setAttribute('style', 'border-color: red')
+        cpassword.setAttribute('style', 'border-color: red')
         return false
     } else if (password) {
         if (regPass.match(num_reg) && regPass.match(char_reg) && regPass.match(charmax_reg) && regPass.match(esp_reg)) {
@@ -190,6 +192,10 @@ function verificaConfirmPassword() {
     if (cpassword.value != password.value) {
         error.setAttribute('style', 'padding: 6px')
         error.innerHTML = '<strong>As senhas não coincidem. Verifique</strong>'
+        label_cpassword.setAttribute('style', 'color: red')
+        cpassword.setAttribute('style', 'border-color: red')
+        return false
+    } else if(cpassword.value.length <= 7){
         label_cpassword.setAttribute('style', 'color: red')
         cpassword.setAttribute('style', 'border-color: red')
         return false

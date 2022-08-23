@@ -33,7 +33,7 @@ h1{
 
 .fa-eye{
     position: relative;
-    top: 50px;
+    top: 53px;
     left: 93%;
     max-width: 30px;
     max-height: 30px;
@@ -44,7 +44,7 @@ h1{
 }
 
 #msgError{
-    background-color: rgb(255, 137, 137);
+    background-color: rgb(216, 65, 65);
     position: fixed;
     font-size: 15.5pt;
     margin-top: -60px;
@@ -59,7 +59,7 @@ h1{
 .msgSucess{
     background-color: rgb(114, 255, 101);
     position: fixed;
-    font-size: 14pt;
+    font-size: 15.5pt;
     margin-top: -60px;
     text-align: center;
     border-radius: 4px;
@@ -73,13 +73,13 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
+    background-image: url(../img/bgcadastro.jpg);
     width: 100vw;
     height: 100vh;
 }
 
 .card_cadastro{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.55);
     width: 27vw;
     height: 85vh;
     border-radius: 4px;
@@ -94,17 +94,20 @@ h1{
 }
 
 .label_geral > input {
+    border-radius: 4px;
+    color: black;
     margin-bottom: 4px;
     font-size: 14pt;
     margin-top: 6px;
     padding: 6px;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgb(255, 60, 60);
+    border-bottom: 3px solid rgb(255, 60, 60);
 }
 
 .label_geral > input:hover{
-    border-bottom: 2px solid red;
+    border-bottom: 3px solid red;
+    transition: .3s ease-in-out;
 }
 
 .input_btn{
