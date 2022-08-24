@@ -23,7 +23,7 @@ let verify_btn = document.querySelector('#btn_enviar')
 let num_reg = '[0-9]'
 let char_reg = '[a-z]'
 let charmax_reg = '[A-Z]'
-let esp_reg = '[!@#$%¨&*()_+-]'
+let esp_reg = '[!@#$%¨&*()_+-<>,.;/?]'
 
 // EVENTOS
 

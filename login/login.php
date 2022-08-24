@@ -22,6 +22,7 @@
             </div>
 
             <div class="label_password">
+                <i class="fa-solid fa-eye-slash" id="view_passOcult"></i>
                 <i class="fa-solid fa-eye" id="view_pass"></i>
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha" required>

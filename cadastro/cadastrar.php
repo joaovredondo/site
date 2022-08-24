@@ -7,7 +7,9 @@ $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $password = filter_input(INPUT_POST, 'password');
 
-$insert_users = "INSERT INTO z_usuarios (nome, email, senha, created) VALUES ('$nome','$email','$password', NOW())";
+$hashPass = password_hash($password, PASSWORD_DEFAULT);
+
+$insert_users = "INSERT INTO z_usuarios (nome, email, senha, created) VALUES ('$nome','$email','$hashPass', NOW())";
 
 $resultado_insert = mysqli_query($conexao, $insert_users);
 
