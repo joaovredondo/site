@@ -25,7 +25,7 @@ let view_cpassOcult = document.querySelector('#view_cpassOcult')
 let num_reg = '[0-9]'
 let char_reg = '[a-z]'
 let charmax_reg = '[A-Z]'
-let esp_reg = '[!@#$%¨&*()_+-<>,.;/?]'
+let esp_reg = '[!@#$%¨&*.,;:/{}]'
 
 // EVENTOS
 
@@ -120,7 +120,7 @@ function verificaCampos() {
 
 // FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO NOME
 function verificaNome() {
-    regNome = String(nome.value)
+    let regNome = String(nome.value)
 
     if (nome.value.length < 8) {
         error.setAttribute('style', 'padding: 6px')
@@ -143,7 +143,7 @@ function verificaNome() {
 
 // FUNÇÃO QUE APLICA ALGUMAS REGRAS NO CAMPO E-MAIL
 function verificaEmail() {
-    regEmail = String(email.value)
+    let regEmail = String(email.value)
 
     if (email.value.length <= 13) {
         error.setAttribute('style', 'padding: 6px')
@@ -171,7 +171,7 @@ function verificaEmail() {
 
 //FUNÇÃO QUE APLICA ALGUMAS VERIFICAÇÕES NO CAMPO SENHA
 function verificaPassword() {
-    regPass = String(password.value)
+    let regPass = String(password.value)
 
     if (password.value.length <= 7) {
         error.innerHTML = '<strong>Senha - Mínimo 8 caracteres</strong>'
@@ -181,7 +181,7 @@ function verificaPassword() {
         password.setAttribute('style', 'border-color: red')
         cpassword.setAttribute('style', 'border-color: red')
         return false
-    } else if (password) {
+    } else if (password.value) {
         if (regPass.match(num_reg) && regPass.match(char_reg) && regPass.match(charmax_reg) && regPass.match(esp_reg)) {
             label_password.setAttribute('style', 'color: green')
             password.setAttribute('style', 'border-color: green')

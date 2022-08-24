@@ -28,6 +28,15 @@ session_start();
                 ?>
                 </div>
 
+                <div class="msgError">
+                    <?php
+                        if(isset($_SESSION['errorConfirm'])){
+                            echo $_SESSION['errorConfirm'];
+                            unset($_SESSION['errorConfirm']);
+                        }
+                    ?>
+                </div>
+
                 <div id="msgError"></div>
                 <div id="msgSucess"></div>
 
