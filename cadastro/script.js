@@ -19,6 +19,8 @@ let error = document.querySelector('#msgError')
 let sucess = document.querySelector('.msgSucess')
 
 let verify_btn = document.querySelector('#btn_enviar')
+let view_passOcult = document.querySelector('#view_passOcult')
+let view_cpassOcult = document.querySelector('#view_cpassOcult')
 
 let num_reg = '[0-9]'
 let char_reg = '[a-z]'
@@ -30,6 +32,8 @@ let esp_reg = '[!@#$%¨&*()_+-<>,.;/?]'
 view_pass.addEventListener('click', viewPass)
 view_cpass.addEventListener('click', viewConfirmPass)
 verify_btn.addEventListener('click', verificar)
+view_passOcult.addEventListener('click', viewPass)
+view_cpassOcult.addEventListener('click', viewConfirmPass)
 
 // INICIO DAS FUNÇÕES
 
@@ -55,22 +59,29 @@ function viewConfirmPass() {
     }
 }
 
-
 // FUNCÃO PARA CONVERTER TIPO DO CAMPO AO CLICAR NO ÍCONE PARA VISUALIZAR SENHA
 function showConfPassword() {
     cpassword.setAttribute('type', 'text')
+    view_cpass.setAttribute('style', 'visibility: hidden')
+    view_cpassOcult.setAttribute('style', 'visibility: visible')
 }
 
 function hideConfPassword() {
     cpassword.setAttribute('type', 'password')
+    view_cpass.setAttribute('style', 'visibility: visible')
+    view_cpassOcult.setAttribute('style', 'visibility: hidden')
 }
 
 function showPassword() {
     password.setAttribute('type', 'text')
+    view_pass.setAttribute('style', 'visibility: hidden')
+    view_passOcult.setAttribute('style', 'visibility: visible')
 }
 
 function hidePassword() {
     password.setAttribute('type', 'password')
+    view_pass.setAttribute('style', 'visilibity: visible')
+    view_passOcult.setAttribute('style', 'visibility: hidden')
 }
 
 // FUNÇÃO VERIFICA SE TODOS OS CAMPOS ESTÃO OK E ALTERA O TIPO DO BOTÃO PARA SUBMIT

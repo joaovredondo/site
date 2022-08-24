@@ -42,12 +42,14 @@ session_start();
                 </div>
 
                 <div class="label_geral">
+                    <i class="fa-solid fa-eye-slash" id="view_passOcult"></i>
                     <i class="fa-solid fa-eye" id="view_pass"></i>
                     <label for="password" id="label_password">Senha</label>
                     <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                 </div>
 
                 <div class="label_geral">
+                    <i class="fa-solid fa-eye-slash" id="view_cpassOcult"></i>
                     <i class="fa-solid fa-eye" id="view_cpass"></i>
                     <label for="cpassword" id="label_cpassword">Confirmar senha</label>
                     <input type="password" name="cpassword" id="cpassword" placeholder="Confirme sua senha" required>

@@ -43,6 +43,19 @@ h1{
     cursor: pointer;
 }
 
+.fa-eye-slash{
+    visibility: hidden;
+    position: relative;
+    top: 53px;
+    left: 93%;
+    max-width: 30px;
+    max-height: 30px;
+    display: flex;
+    font-size: 14pt;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
 #msgError{
     background-color: rgb(216, 65, 65);
     position: fixed;
