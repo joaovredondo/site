@@ -6,7 +6,6 @@ include_once("conexao.php");
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $password = filter_input(INPUT_POST, 'password');
-
 $hashPass = password_hash($password, PASSWORD_DEFAULT);
 
 $result_usuario = "SELECT * FROM z_usuarios WHERE email='$email'";
@@ -20,7 +19,7 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 }
 
 if(mysqli_insert_id($conexao)){
-    $_SESSION['msgConfirm'] = '<p style="padding: 6px; font-size: 16pt"><strong>Usuário cadastro com sucesso.</strong>';
+    $_SESSION['msgConfirm'] = '<p style="padding: 6px; font-size: 16pt"><strong>Usuário cadastrado com sucesso.</strong>';
     sleep(3);
     header("Location: cadastro.php");
 } else {
