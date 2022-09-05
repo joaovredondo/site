@@ -73,7 +73,7 @@ h1{
     background-color: rgb(114, 255, 101);
     position: fixed;
     font-size: 15.5pt;
-    margin-top: -60px;
+    margin-top: -70px;
     text-align: center;
     border-radius: 4px;
     left: 50%;
@@ -86,7 +86,7 @@ h1{
     background-color: rgb(255, 101, 101);
     position: fixed;
     font-size: 15.5pt;
-    margin-top: -60px;
+    margin-top: -40px;
     text-align: center;
     border-radius: 4px;
     left: 50%;
@@ -123,7 +123,7 @@ h1{
     border-radius: 4px;
     color: black;
     margin-bottom: 4px;
-    font-size: 14pt;
+    font-size: 16pt;
     margin-top: 6px;
     padding: 6px;
     border: none;
@@ -137,7 +137,7 @@ h1{
 }
 
 .input_btn{
-    margin-top: 25px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;

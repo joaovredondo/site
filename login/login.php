@@ -1,9 +1,6 @@
 <?php
     include_once("../cadastro/conexao.php");
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +29,6 @@
                         }
                     ?>
                 </div>
-
 
                 <div class="label_email">
                     <label for="email">E-mail</label>

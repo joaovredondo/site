@@ -1,0 +1,31 @@
+<?php
+
+session_start();
+include_once("../cadastro/conexao.php");
+
+if(!isset($_SESSION['email'])){
+    $_SESSION['errorPage'] = '<p style="padding: 6px">Necessário realizar login.';
+    header("Location: login.php");
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_menu.css">
+    <title>Início</title>
+</head>
+
+<body>
+    <ul id="menu_h">
+        <li><a href="#">Início</li></a>
+        <li><a href="#">Séries</li></a>
+        <li><a href="#">Imagens</li></a>
+    </ul>
+</body>
+
+</html>

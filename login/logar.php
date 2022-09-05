@@ -1,23 +1,20 @@
 <?php
-    require_once("../cadastro/conexao.php");
 
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = filter_input(INPUT_POST, 'password');
+    include_once("../cadastro/conexao.php");
+    session_start();
+    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM Z_USUARIOS WHERE email='$email' LIMIT 1";
-    $result = $conexao->query($sql);
+    $sql = "SELECT * FROM Z_USUARIOS WHERE EMAIL='$email' LIMIT 1";
+    $resultado = mysqli_query($conexao, $sql);
+    $result = mysqli_fetch_assoc($resultado);
 
-    if($result->num_rows > 0){
-
+    if(password_verify($password, $result['senha'])){
+        $_SESSION['email'] = $result['email'];
+        header("Location: menu.php");
     } else {
-        
-    }
-
-    if(isset($_POST['email']) && isset($_POST['password'])){
-        $email = mysqli_real_escape_string($conexao, $_POST['email']);
-        $password = mysqli_real_escape_string($conexao, $_POST['password']);
-    } else {
-        $_SESSION['errorPage'] = 'Acesso negado. Faça o login!';
         header("Location: login.php");
+        $_SESSION['errorPage'] = '<p style="padding: 6px">Email ou senha incorretos.';
     }
 ?>

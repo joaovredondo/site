@@ -90,8 +90,6 @@ function verificar() {
         verify_btn.setAttribute('type', 'submit')
         sucess.innerHTML = '<strong>Cadastrando usuário...</strong>'
         sucess.setAttribute('style', 'padding: 6px; font-size: 16pt; cursor: pointer')
-    } else {
-
     }
 
 }
